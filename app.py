@@ -158,5 +158,9 @@ def riwayat_keluar():
     riwayat = ObatKeluar.query.order_by(ObatKeluar.tanggal.desc()).all()
     return render_template('riwayat_keluar.html', riwayat=riwayat)
 
+# Untuk menjalankan secara lokal
 if __name__ == '__main__':
     app.run(debug=True)
+
+# Untuk Railway / gunicorn
+# Railway akan mencari objek `app` secara langsung
