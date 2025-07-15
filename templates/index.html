@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Selamat Datang - Sistem Informasi Obat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fbfc;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+    }
+
+    .wrapper {
+      background: #ffffff;
+      border: 1px solid #cfd8dc;
+      border-radius: 20px;
+      padding: 50px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .medical-gif {
+      width: 160px;
+      height: auto;
+      margin: 0 auto 25px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 36px;
+      color: #1565c0;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #455a64;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .button-group a {
+      padding: 12px 28px;
+      border-radius: 50px;
+      background-color: #1976d2;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .button-group a:hover {
+      background-color: #0d47a1;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(25, 118, 210, 0.3);
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #90a4ae;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .wrapper {
+        padding: 30px;
+      }
+
+      .button-group {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <img src="https://media.tenor.com/9K6DhBzS6WkAAAAC/doctor-medical.gif" alt="Animasi Medis" class="medical-gif" />
+
+    <h1>Selamat Datang</h1>
+    <p>Sistem Informasi Obat membantu Anda mencatat dan mengelola stok obat dengan cepat, akurat, dan terintegrasi.</p>
+
+    <div class="button-group">
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Daftar</a>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Sistem Informasi Obat. Dibuat untuk mendukung layanan kesehatan digital 💙
+    </div>
+  </div>
+</body>
+</html>

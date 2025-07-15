@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Riwayat Obat Keluar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 50px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: rgba(20, 20, 30, 0.95);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ff8a65;
+      letter-spacing: 1px;
+    }
+
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: #2a2a3f;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, background 0.3s ease;
+      animation: zoomIn 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      background: #3b3b55;
+    }
+
+    .card .row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #ffccbc;
+    }
+
+    .value {
+      color: #ffe0b2;
+      font-weight: 500;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .back a {
+      color: #00e5ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .back a:hover {
+      color: #1de9b6;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Riwayat Obat Keluar</h2>
+    <div class="card-list">
+      {% for r in riwayat %}
+      <div class="card" style="animation-delay: {{ loop.index0 * 0.1 }}s">
+        <div class="row">
+          <div class="label">Nama Obat:</div>
+          <div class="value">{{ r.nama_obat }}</div>
+        </div>
+        <div class="row">
+          <div class="label">Jumlah:</div>
+          <div class="value">{{ r.jumlah }}</div>
+        </div>
+        <div class="row">
+          <div class="label">Tanggal:</div>
+          <div class="value">{{ r.tanggal }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="back">
+      <a href="{{ url_for('dashboard') }}">← Kembali ke Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>

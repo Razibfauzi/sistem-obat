@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - Sistem Obat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #d2f4f7, #c2e9fb);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #1976d2;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 25px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      width: 260px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      color: #00796b;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .card a.button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #1976d2;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .card a.button:hover {
+      background-color: #0d47a1;
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 20px;
+      background-color: #e3f2fd;
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Dashboard Sistem Informasi Obat
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3004/3004625.png" alt="Obat Masuk" />
+      <h3>Obat Masuk</h3>
+      <p>Kelola data obat yang baru masuk ke sistem.</p>
+      <a href="{{ url_for('obat_masuk') }}" class="button">Input Obat Masuk</a>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3004/3004619.png" alt="Obat Keluar" />
+      <h3>Obat Keluar</h3>
+      <p>Catat pengeluaran obat ke pasien atau unit.</p>
+      <a href="{{ url_for('obat_keluar') }}" class="button">Input Obat Keluar</a>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3209/3209789.png" alt="Data Obat" />
+      <h3>Data Obat</h3>
+      <p>Lihat stok dan data obat yang tersedia.</p>
+      <a href="{{ url_for('data_obat') }}" class="button">Lihat Data Obat</a>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/6811/6811431.png" alt="Riwayat Masuk" />
+      <h3>Riwayat Masuk</h3>
+      <p>Lihat histori transaksi obat masuk.</p>
+      <a href="{{ url_for('riwayat_masuk') }}" class="button">Riwayat Masuk</a>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/6811/6811432.png" alt="Riwayat Keluar" />
+      <h3>Riwayat Keluar</h3>
+      <p>Lihat histori transaksi obat keluar.</p>
+      <a href="{{ url_for('riwayat_keluar') }}" class="button">Riwayat Keluar</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Sistem Informasi Obat | Dashboard Interaktif
+  </footer>
+
+</body>
+</html>
